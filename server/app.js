@@ -32,12 +32,12 @@ app.use(methodOverride('_method'));
 
 app.use(express.static(__dirname + '/public'));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
-//  app.use('/uploads/products', express.static(path.join(__dirname, 'uploads/products')))
-//routes
-// const ProductApiRoute=require('./app/routes/productApiRoute')
-// app.use('/api',ProductApiRoute)
-//users auth route
 
+//routes front end
+const ProductApiRoute=require('./app/routes/productApiRoute')
+app.use('/api',ProductApiRoute)
+
+//admin route
 const adminRoute = require('./app/routes/adminRoute')
 app.use( adminRoute)
 const port = 3000

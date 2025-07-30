@@ -7,10 +7,10 @@ import MainPage from './MainPage';
 import '../style/style.css';
 
 const Home = () => {
-  const [filters, setFilters] = useState({ colors: [], sizes: [], priceRange: [0, 1000], brand: "" });
+   const [filters, setFilters] = useState({ category: "" });
   return (
     <Stack direction="row" className="sidebarContainer">
-      <SideBar onFilterChange={setFilters} />
+      {/* <SideBar onFilterChange={setFilters} /> */}
       <Box flexGrow={1} className="mainBlock">
         <MainPage filters={filters} />
       </Box>
